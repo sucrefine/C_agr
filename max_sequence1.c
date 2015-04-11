@@ -6,7 +6,7 @@ int main(){
 	int max=0;
 	int max1,max2;
 	for (i=0;i<10;i++){
-		for (j=0;j<10;j++){
+		for (j=i;j<10;j++){//此处j从0开始也是可以的，但是会多些运算，应为在之前已经算过了
 			int sum=0;
 			for (k=i;k<=j;k++){
 				sum+=a[k];
