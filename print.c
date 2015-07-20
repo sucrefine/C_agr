@@ -1,3 +1,4 @@
+/*输入n，打印出从1到最大的n位整数*/
 #include<stdio.h>
 int main(){
 	int n;
