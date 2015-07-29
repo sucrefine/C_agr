@@ -31,7 +31,7 @@ void heap_sort(int a[],int n){
 		temp=a[0];
 		a[0]=a[i];
 		a[i]=temp;//交换首位元素
-		heap_adjust(a,0,i);//继续调整无序区为大根堆
+		heap_adjust(a,0,i);//缩小调整的范围，每次调整0～i处为大根堆，i循环一次就减一
 	}
 }
 int main(){
