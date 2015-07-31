@@ -1,4 +1,4 @@
-/*堆排序算法，用大根对的思想，将数组看成一颗完全二叉树。第一步：将二叉树调整成大根堆。
+/*堆排序算法，用大根堆的思想，将数组看成一颗完全二叉树。第一步：将二叉树调整成大根堆。
 第二步：将无序区的第一个元素跟最后一个元素交换，将交换后的最后一个元素交换到有序区。
 第三步：调整无序区为大根堆，循环二三步骤*/
 #include<stdio.h>
@@ -9,12 +9,12 @@ void heap_adjust(int a[],int i,int n){
 	for(i;i*2+1<n;i=child){
 		child=2*i+1;
 		if(child<n-1&&a[child+1]>a[child])
-			++child;
+			++child;//取孩子节点值较大的节点下标
 		if(a[i]<a[child]){
 			temp=a[i];
 			a[i]=a[child];
 			a[child]=temp;
-		}
+		}//交换父节点和较大孩子节点
 		else
 			break;
 	}
@@ -30,7 +30,7 @@ void heap_sort(int a[],int n){
 	for(i=n-1;i>0;--i){
 		temp=a[0];
 		a[0]=a[i];
-		a[i]=temp;//交换首位元素
+		a[i]=temp;//交换首尾元素
 		heap_adjust(a,0,i);//缩小调整的范围，每次调整0～i处为大根堆，i循环一次就减一
 	}
 }
