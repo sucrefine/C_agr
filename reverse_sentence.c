@@ -1,4 +1,4 @@
-/*翻转句子，比如 i am a students.,翻转结果为students. a am i。思想，先把整个句子翻转，然后堆句子中单词翻转*/
+/*翻转句子，比如 i am a student.,翻转结果为student. a am i。思想，先把整个句子翻转，然后堆句子中单词翻转*/
 #include<stdio.h>
 void reverse(char a[],int start,int end){
 	int i=start;
@@ -17,7 +17,7 @@ int main(){
 	int p=0,q=0;
 	while(q<=14){
 		q++;
-		if(a[q]==32){//以空格（ANSI码为32）为将句子分割成单词，然后对每个单词翻转
+		if(a[q]==32){//以空格（ANSI码为32）为界限将句子分割成单词，然后对每个单词翻转
 			reverse(a,p,q-1);
 			p=q+1;
 		}
